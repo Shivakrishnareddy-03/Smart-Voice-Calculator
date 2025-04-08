@@ -1,9 +1,25 @@
-def process_text(text):
-    print(f"Processing text: {text}")
-    return text.lower()
+print("File is running")
+import re
 
-# ✅ This part ensures something actually runs when you execute this file
-if __name__ == "__main__":
-    sample_input = "What is 5 plus 3?"
-    processed = process_text(sample_input)
-    print(f"Processed: {processed}")
+def process_text(text):
+
+    text = text.lower()
+    numbers = list(map(int, re.findall(r'\d+', text)))
+
+
+    if "add" in text or "plus" in text:
+        operation ="add"
+    elif "subtract" in text or "minus" in text or "difference" in text:
+        operation = "subtract"
+    elif "multiply" in text or "times" in text or "product" in text:
+        operation = "multiply"
+    elif "divide" in text or "division" in text or "by" in text:
+        operation ="divide"       
+    else:
+        operation ="Unknown"
+
+    return {
+        "operation" : operation,
+        "numbers" : numbers
+    }    
+
