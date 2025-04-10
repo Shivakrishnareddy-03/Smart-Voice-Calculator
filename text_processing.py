@@ -7,13 +7,14 @@ def process_text(text):
     numbers = list(map(int, re.findall(r'\d+', text)))
 
 
-    if "add" in text or "plus" in text:
+
+    if "add" in text or "plus" in text or "+" in text:
         operation ="add"
-    elif "subtract" in text or "minus" in text or "difference" in text:
+    elif "subtract" in text or "minus" in text or "difference" in text or "-" in text:
         operation = "subtract"
     elif "multiply" in text or "times" in text or "product" in text:
         operation = "multiply"
-    elif "divide" in text or "division" in text or "by" in text:
+    elif "divide" in text or "division" in text or "by" in text or "/" in text:
         operation ="divide"       
     else:
         operation ="Unknown"
