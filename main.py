@@ -47,16 +47,3 @@ if __name__ == "__main__":
 
 
 
-
-def main():
-    print("Script Started...")
-    user_input = recognize_speech()
-    if user_input:
-        result = process_text(user_input)
-        print("Result : ", result)
-        speak(f"The result is {result}")
-    else:
-        print("I didnt got")
-
-if __name__ =="__main__":
-    main()
